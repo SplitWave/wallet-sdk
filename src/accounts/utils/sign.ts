@@ -8,9 +8,10 @@ export async function sign({
     hash,
     privateKey
 }: {
-    hash: string,
+    hash: Uint8Array,
     privateKey: Uint8Array
 }): Promise<SignReturnType> {
+    console.log(hash, privateKey)
     const signature = signMessage(hash, privateKey)
     
     return {

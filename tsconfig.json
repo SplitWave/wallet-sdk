@@ -1,19 +1,16 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "dist",
-    "esModuleInterop": true,
-    "importsNotUsedAsValues": "error",
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext",
-    "types": ["node"]
+    "declaration": true,
+    "target": "es2020",
+    "lib": ["es2020"],
+    "module": "es6",
+    "moduleResolution": "node",
+    "outDir": ".",
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "baseUrl": ".",
   },
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/index.ts"],
+  "exclude": ["node_modules", "lib"]
 }

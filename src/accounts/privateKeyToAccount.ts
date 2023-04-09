@@ -4,8 +4,6 @@ import base58 from "bs58"
 import { toAccount } from "./toAccount"
 import { signMessage, signTransaction } from "./utils"
 
-etc.sha512Sync = (...m) => sha512(etc.concatBytes(...m));
-
 export const privateKeyToAccount = (privateKey: string) => {
     const publicKey = getPublicKey(base58.decode(privateKey).slice(0, 32))
 
@@ -15,11 +13,9 @@ export const privateKeyToAccount = (privateKey: string) => {
             return signMessage({message, privateKey: base58.decode(privateKey).slice(0, 32)})
         },
         signTransaction: async (transaction) => {
-            return signTransaction({message: "transaction.toString() as string", privateKey: base58.decode(privateKey)})
+            return signTransaction({transaction, privateKey: base58.decode(privateKey)})
         }
     })
-
-    account.signMessage({ message: "dsa" }).then(x => console.log(x)).catch(e => console.error(e))
 
     return account
 }

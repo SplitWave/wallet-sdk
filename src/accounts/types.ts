@@ -10,7 +10,7 @@ export type Account = JsonRpcAccount | LocalAccount
 export type CustomSource = {
     publicKey: string
     signMessage: ({ message }: { message: string }) => Promise<string>
-    signTransaction: (transaction: undefined) => Promise<string> // todo
+    signTransaction: (transaction: Uint8Array) => Promise<string> // todo
   }
 
 export type JsonRpcAccount = {

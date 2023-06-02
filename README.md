@@ -5,7 +5,7 @@ A new and modular way to interact with Solana
 ## Installation
 
 ```shell
-pnpm install solana-sdk
+npm i solana-wallet-creator
 ```
 
 ## Accounts
